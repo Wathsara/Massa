@@ -1,8 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { Constants, ScreenOrientation } from 'expo';
-import { Permissions, Notifications } from 'expo';
+import { Constants, ScreenOrientation , Permissions, Notifications} from 'expo';
 ScreenOrientation.allow(ScreenOrientation.Orientation.ALL);
 
 import {
@@ -53,7 +52,7 @@ class MainScreen extends React.Component<*> {
   
     // only ask if permissions have not already been determined, because
     // iOS won't necessarily prompt the user a second time.
-    if (existingStatus !== 'granted') {
+    if (existingStatus !== "granted") {
       // Android remote notification permissions are granted during the app
       // install, so this will only ask on iOS
       const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
@@ -61,7 +60,7 @@ class MainScreen extends React.Component<*> {
     }
   
     // Stop here if the user did not grant permissions
-    if (finalStatus !== 'granted') {
+    if (finalStatus !== "granted") {
       return;
     }
   
