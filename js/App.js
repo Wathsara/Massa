@@ -39,7 +39,9 @@ class MainScreen extends React.Component<*> {
     const { navigation } = this.props;
 
     return (
+      
       <View style={{ flex: 1 }}>
+      <StatusBar hidden />
         <ScrollView style={{ flex: 1 }}>
           <Banner />
           {Object.keys(ExampleRoutes).map((routeName: string) => (
